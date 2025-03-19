@@ -4,9 +4,11 @@ import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
 from sklearn.preprocessing import OneHotEncoder
+import os
 
 def get_clean_data():
-  data = pd.read_csv(r"F:\VS Code\Brain_tumor_detection_app\data\processed_brain_tumor_data.csv")
+  data_path = os.path.join("data", "processed_brain_tumor_data.csv")
+  data = pd.read_csv(data_path)
 
   data['Tumor_Type'] = data[['Tumor_Type_Benign', 'Tumor_Type_Malignant']].idxmax(axis=1)
   data['Tumor_Type'] = data['Tumor_Type'].map({'Tumor_Type_Benign': 0, 'Tumor_Type_Malignant': 1})
