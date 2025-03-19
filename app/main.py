@@ -3,7 +3,6 @@ import pickle
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
-from safetensors.torch import load_model
 from sklearn.preprocessing import OneHotEncoder
 
 def get_clean_data():
